@@ -26,9 +26,11 @@ body { font-family: 'Nova Square'; color: snow;background: dimgray;}
 }
 
 .display {
-    text-align: center;
+    text-align: right;
+    height: 34px;
     background: rgb(51, 51, 51);
     display: flex;
+    justify-content: center;    
     flex-direction: column;
     font-size: 24px;
     padding: 5px;
@@ -37,7 +39,7 @@ body { font-family: 'Nova Square'; color: snow;background: dimgray;}
     margin: 3px;
 }
 
-.button {
+button {
     font-size: 18px;
     border-radius: 5px;
     border: 1px solid black;
@@ -48,17 +50,22 @@ body { font-family: 'Nova Square'; color: snow;background: dimgray;}
 .operator { background: rgb(102, 83, 83);}
 
 .digit { background: rgb(70, 79, 104);}
-.digit:hover { }
+
+.backspace { background: rgb(121, 0, 0);}
 
 .equal { background: rgb(66, 99, 66);}
 
 .clear { background: rgb(128, 89, 129);}
 
-button {
-    color: snow
-}
+button { color: snow }
 button:hover { box-shadow: 0px 0px 1px 1px #3b3b3b;}
-button:active { 
+.active, button:active { 
     filter: brightness(0.8);
     border-color: snow; 
-    box-shadow: 0px 0px 5px 1px snow;}
+    box-shadow: 0px 0px 5px 1px snow;
+}
+
+.unavailable {
+    filter: brightness(1.5);
+    background: gray;
+}
