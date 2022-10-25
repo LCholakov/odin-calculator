@@ -58,14 +58,21 @@ button {
 .clear { background: rgb(128, 89, 129);}
 
 button { color: snow }
-button:hover { box-shadow: 0px 0px 1px 1px #3b3b3b;}
+
+button:hover { 
+    box-shadow: 0px 0px 5px 1px #ffffff; 
+    filter: brightness(1.3);
+}
+
 .active, button:active { 
     filter: brightness(0.8);
     border-color: snow; 
     box-shadow: 0px 0px 5px 1px snow;
 }
 
-.unavailable {
-    filter: brightness(1.5);
+button:disabled {
     background: gray;
+    filter: brightness(1);
+    border-color: snow; 
+    box-shadow: 0px 0px 0px 0px snow;
 }
