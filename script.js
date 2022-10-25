@@ -121,11 +121,9 @@ function parseKeyUp(key) {
   switch (key) {
     case "Escape":
       document.querySelector('.clear').classList.remove('active');
-      clear();
       break;
     case 'Backspace':
       document.querySelector('.backspace').classList.remove('active');
-      backspace();
       break;
     case '.':
       document.querySelector('.decimal').classList.remove('active');
