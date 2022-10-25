@@ -8,7 +8,6 @@ let _decimalCount = 0;
 let _num1decimalCount = 0;
 let _num2decimalCount = 0;
 let _operatorCount = 0;
-let _isFirstRound = true;
 let _hasError = false;
 
 // Operations //
@@ -155,7 +154,7 @@ function parseDisplay() {
       }
     }
   }
-  
+
   // return if no operator is found
   if (i === display.textContent.length) {
     return;
@@ -175,16 +174,18 @@ function parseDisplay() {
       _decimalCount = 1;
     }
     display.textContent = result;
-    _isFirstRound = false;
   }
 }
 
 // Input
 
 function digitInput(digit) {
-  display.textContent[0] === '0' && _isFirstRound ?
-    display.textContent = digit :
+  if (display.textContent[0] === '0'
+    && !isOperator(display.textContent[display.textContent.length - 1])) {
+    display.textContent = digit
+  } else {
     display.textContent += digit;
+  }
 }
 
 function decimalInput() {
@@ -236,7 +237,6 @@ function clear() {
   _operator = '';
   _operatorCount = 0;
   _decimalCount = 0;
-  _isFirstRound = true;
   _hasError = false;
   display.textContent = 0;
 }
